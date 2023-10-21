@@ -33,6 +33,7 @@ const Lokasi = () => {
               <span className="circle" aria-hidden="true">
                 <span className="icon arrow"></span>
               </span>
+              <a href="https://www.google.com/maps/place/Klinik+Rizki+Medika/@-6.1529054,106.7306375,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f7f0749b193d:0x7f4969ece6c264c7!8m2!3d-6.1529107!4d106.7332124!16s%2Fg%2F11h0yg5_0j?entry=ttu"></a>
               <span className="button-text">Cari Lokasi</span>
             </button>
           </div>
