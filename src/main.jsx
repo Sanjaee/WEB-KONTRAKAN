@@ -8,6 +8,7 @@ import {
 import Home from "./App";
 import Payment from "./PaymentGetway/Payment";
 import GoogleMap from "./Components/Lokasi";
+import AdminPanel from "./AdminPanel/AdminPanel";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/Lokasi",
     element: <GoogleMap />,
+  },
+  {
+    path: "/ADMINNETWORK",
+    element: <AdminPanel />,
   },
 ]);
 

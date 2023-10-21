@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
+import { onSnapshot } from "firebase/firestore";
 import db from "../api/firebase";
 import "../style/TableKontrakan.css";
 import { Link } from "react-router-dom";
@@ -19,6 +20,20 @@ const DaftarKontrakan = () => {
         ...doc.data(),
       }));
       setKontrakan(kontrakanData);
+
+      // Set up a real-time listener for updates
+      const unsubscribe = onSnapshot(kontrakanCollection, (querySnapshot) => {
+        const updatedKontrakanData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setKontrakan(updatedKontrakanData);
+      });
+
+      // Make sure to unsubscribe when the component unmounts
+      return () => {
+        unsubscribe();
+      };
     };
 
     fetchData();
@@ -39,7 +54,6 @@ const DaftarKontrakan = () => {
     );
   });
 
-  // ...
   return (
     <section className="mx-auto max-w-7xl p-4 sm:px-2 lg:px-2 lg:py-6 min-h-[50vh]">
       <div className="flex flex-col space-y-10">
@@ -81,17 +95,19 @@ const DaftarKontrakan = () => {
                     }`}
                   ></div>
                   <p className="store-card-description">{item.status}</p>
+
+                  <div className="location">
+                    <FontAwesomeIcon icon={faMapMarker} />{" "}
+                    <p className="lokasi">{item.lokasi}</p>
+                  </div>
+                  <p className="store-card-price">
+                    {formatCurrency(item.harga)}
+                  </p>
                   <div className="rating">
                     {Array.from({ length: item.rating }, (_, index) => (
                       <FontAwesomeIcon icon={faStar} key={index} />
                     ))}
                   </div>
-                  <div className="location">
-                    <FontAwesomeIcon icon={faMapMarker} /> {item.lokasi}
-                  </div>
-                  <p className="store-card-price">
-                    {formatCurrency(item.harga)}
-                  </p>
                 </div>
               </div>
             </Link>
