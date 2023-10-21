@@ -1,0 +1,12 @@
+/* styles.css (or your preferred CSS file) */
+.skeleton-loader {
+  width: 100%;
+  height: 200px; /* Set the desired height for your loader */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-family: arial;
+  font-weight: bold;
+}

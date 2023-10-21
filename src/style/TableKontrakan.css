@@ -1,0 +1,77 @@
+.store-card {
+  display: block;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex-basis: calc(33.33% - 1rem);
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.store-card:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.store-card-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.store-card-image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.store-card-details {
+  padding: 1rem;
+}
+
+.store-card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  display: inline; /* Add this line to make it display inline with the image */
+}
+
+.store-card-description {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.store-card-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+@media (max-width: 640px) {
+  .store-card {
+    flex-basis: calc(100% - 1rem); /* Full width for one card per row */
+    margin-right: 0;
+  }
+  .store-card-inner {
+    display: block;
+  }
+  .store-card-details {
+    padding: 1rem;
+  }
+  .store-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .store-card-description {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  .store-card-price {
+    font-size: 0.875rem;
+  }
+}
