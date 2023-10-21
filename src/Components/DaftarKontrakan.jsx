@@ -3,6 +3,8 @@ import { collection, getDocs } from "firebase/firestore";
 import db from "../api/firebase";
 import "../style/TableKontrakan.css";
 import { Link } from "react-router-dom";
+import { faStar, faMapMarker } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DaftarKontrakan = () => {
   const [kontrakan, setKontrakan] = useState([]);
@@ -37,6 +39,7 @@ const DaftarKontrakan = () => {
     );
   });
 
+  // ...
   return (
     <section className="mx-auto max-w-7xl p-4 sm:px-2 lg:px-2 lg:py-6 min-h-[50vh]">
       <div className="flex flex-col space-y-10">
@@ -67,8 +70,25 @@ const DaftarKontrakan = () => {
                 />
 
                 <div className="store-card-details">
-                  <h2 className="store-card-title">{item.name}</h2>
+                  <div className="store-card-title-wrapper">
+                    <h2 className="store-card-title">{item.name}</h2>
+                  </div>
+
                   <p className="store-card-description">{item.title}</p>
+                  <div
+                    className={`status-dot ${
+                      item.status === "KOSONG" ? "green-dot" : "red-dot"
+                    }`}
+                  ></div>
+                  <p className="store-card-description">{item.status}</p>
+                  <div className="rating">
+                    {Array.from({ length: item.rating }, (_, index) => (
+                      <FontAwesomeIcon icon={faStar} key={index} />
+                    ))}
+                  </div>
+                  <div className="location">
+                    <FontAwesomeIcon icon={faMapMarker} /> {item.lokasi}
+                  </div>
                   <p className="store-card-price">
                     {formatCurrency(item.harga)}
                   </p>

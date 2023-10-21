@@ -75,3 +75,42 @@
     font-size: 0.875rem;
   }
 }
+
+/* Misalnya, dalam file CSS Anda */
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.green-dot {
+  background-color: green;
+}
+
+.red-dot {
+  background-color: red;
+}
+.rating {
+  display: flex;
+  margin-top: 10px;
+}
+
+.rating .fa-star {
+  color: gold; /* Ganti dengan warna yang sesuai */
+  font-size: 1.2rem; /* Sesuaikan ukuran ikon sesuai kebutuhan */
+  margin-right: 2px; /* Jarak antara ikon bintang */
+}
+.location {
+  display: flex;
+  align-items: center;
+  color: #333; /* Warna teks sesuai kebutuhan */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.location svg {
+  margin-right: 5px; /* Jarak antara ikon dan teks */
+  font-size: 1.2rem; /* Ukuran ikon sesuai kebutuhan */
+}
