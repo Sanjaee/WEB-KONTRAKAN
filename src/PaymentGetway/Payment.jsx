@@ -89,7 +89,7 @@ const Payment = () => {
           <div className=" ml-5 mt-4">
             <li>Lengkapi Data Joki Dengan Teliti!</li>
             <li>Pilih Jenis Joki Rank</li>
-            <li>Masukkan nomor WhatsApp yg benar!</li>
+            <li>Masukkan nomor WhatsApp</li>
           </div>
           <h1 className=" font-bold text-red-500 mt-12">
             Estimasi Proses Jasa Joki Kita Usahakan Secepatnya Minimal 12 Jam -

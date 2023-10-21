@@ -3,10 +3,19 @@ import Navigasi from "./Navigasi";
 import "../style/ButtonLokasi.css";
 
 const Lokasi = () => {
+  const handleCariLokasiClick = () => {
+    // Alamat URL yang akan dibuka saat tombol "Cari Lokasi" ditekan
+    const googleMapsURL =
+      "https://www.google.com/maps/place/Klinik+Rizki+Medika/@-6.1529054,106.7306375,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f7f0749b193d:0x7f4969ece6c264c7!8m2!3d-6.1529107!4d106.7332124!16s%2Fg%2F11h0yg5_0j?entry=ttu";
+
+    // Buka tautan di jendela baru
+    window.open(googleMapsURL, "_blank");
+  };
+
   return (
     <div className="bg-gray-200 ">
       <Navigasi />
-      <div className="mt-10 flex flex-col sm:flex-row ">
+      <div className="mt-10 flex flex-col sm:flex-row  ">
         <div className="w-full sm:w-1/2 p-4 sm:p-10">
           <h1 className="text-2xl font-bold">Nama Lokasi</h1>
           <p className="text-lg">Tanggal Pembuatan: DD/MM/YYYY</p>
@@ -28,12 +37,11 @@ const Lokasi = () => {
               Find Population on Map
             </a>
           </iframe>
-          <div className="mt-10 items-center justify-center flex ">
-            <button className="learn-more">
+          <div className="mt-10 items-center justify-center flex">
+            <button className="learn-more" onClick={handleCariLokasiClick}>
               <span className="circle" aria-hidden="true">
                 <span className="icon arrow"></span>
               </span>
-              <a href="https://www.google.com/maps/place/Klinik+Rizki+Medika/@-6.1529054,106.7306375,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f7f0749b193d:0x7f4969ece6c264c7!8m2!3d-6.1529107!4d106.7332124!16s%2Fg%2F11h0yg5_0j?entry=ttu"></a>
               <span className="button-text">Cari Lokasi</span>
             </button>
           </div>
