@@ -16,7 +16,7 @@ const Payment = () => {
     catatan: "",
   });
 
-  const nomorTeleponAdmin = "+6287765165143";
+  const nomorTeleponAdmin = "+6289618714018";
   const [isPopupVisible, setPopupVisible] = useState(false);
 
   const handleChange = (e) => {
