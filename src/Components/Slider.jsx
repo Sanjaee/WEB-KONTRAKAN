@@ -46,7 +46,7 @@ const Slider = () => {
   useEffect(() => {
     let slideInterval;
     if (!isLoading && sliderData.length > 0) {
-      slideInterval = setInterval(nextSlide, 3000);
+      slideInterval = setInterval(nextSlide, 5000);
     }
 
     return () => clearInterval(slideInterval);

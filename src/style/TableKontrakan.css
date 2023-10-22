@@ -24,20 +24,22 @@
 
 .store-card-image {
   width: 100%;
-  height: auto;
-  max-height: 200px;
+  height: 146.656px;
+  line-height: 16.1px;
   object-fit: cover;
 }
 
 .store-card-details {
   padding: 1rem;
+  vertical-align: middle;
+  position: relative;
 }
 
 .store-card-title {
   font-weight: bold;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  display: inline; /* Add this line to make it display inline with the image */
+  /* Menghapus display: inline; */
 }
 
 .store-card-description {
