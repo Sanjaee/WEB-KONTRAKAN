@@ -1,3 +1,29 @@
+.input {
+  width: 100%;
+  max-width: 220px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+  margin-left: 2px;
+}
+
+.input:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.input:active {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  border: 2px solid grey;
+}
+
 .store-card {
   display: block;
   text-decoration: none;
@@ -24,7 +50,7 @@
 
 .store-card-image {
   width: 100%;
-  height: 146.656px;
+  height: 150.656px;
   line-height: 16.1px;
   object-fit: cover;
 }
@@ -39,7 +65,6 @@
   font-weight: bold;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  /* Menghapus display: inline; */
 }
 
 .store-card-description {
@@ -63,18 +88,23 @@
     display: block;
   }
   .store-card-details {
-    padding: 1rem;
+    padding: 12px;
   }
   .store-card-title {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 16px;
+    padding: 0px;
+    margin-bottom: 5px;
   }
   .store-card-description {
-    font-size: 0.875rem;
-    margin-bottom: 0.25rem;
+    font-size: 11px;
+    padding: 0px;
+    margin: 0px;
   }
   .store-card-price {
     font-size: 0.875rem;
+
+    padding: 0px;
+    margin: 0px;
   }
 }
 
@@ -96,7 +126,7 @@
 }
 .rating {
   display: flex;
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 .rating .fa-star {
@@ -113,9 +143,35 @@
 }
 
 .location svg {
-  margin-right: 5px; /* Jarak antara ikon dan teks */
-  font-size: 1.2rem; /* Ukuran ikon sesuai kebutuhan */
+  margin-right: 5px;
+  font-size: 20px;
+  margin-bottom: 3px;
 }
+/* Ukuran font default */
 .lokasi {
-  font-size: 12px;
+  font-size: 10px;
+}
+
+/* Media Query untuk perangkat mobile (misalnya ukuran layar kurang dari 768px) */
+@media (max-width: 768px) {
+  .lokasi {
+    font-size: 10px; /* Atur ukuran font untuk mobile di sini */
+  }
+  .location svg {
+    margin-right: 5px;
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+}
+
+/* Media Query untuk perangkat PC (misalnya ukuran layar lebih dari 768px) */
+@media (min-width: 769px) {
+  .lokasi {
+    font-size: 16px; /* Atur ukuran font untuk PC di sini */
+  }
+  .location svg {
+    margin-right: 5px;
+    font-size: 15px;
+    margin-top: 5px;
+  }
 }

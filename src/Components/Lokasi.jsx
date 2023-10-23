@@ -15,14 +15,16 @@ const Lokasi = () => {
   return (
     <div className="bg-gray-200 ">
       <Navigasi />
-      <div className="mt-10 flex flex-col sm:flex-row  ">
-        <div className="w-full sm:w-1/2 p-4 sm:p-10">
-          <h1 className="text-2xl font-bold">Nama Lokasi</h1>
-          <p className="text-lg">Tanggal Pembuatan: DD/MM/YYYY</p>
-          <p className="text-lg">Jam Buka: HH:MM - HH:MM</p>
+      <div className=" flex flex-col sm:flex-row ">
+        <div className="w-full sm:w-1/2 p-4 sm:p-10 mt-36 sm:mt-60 ">
+          <h1 className="text-2xl font-bold">Lokasi</h1>
+          <p className="text-lg">
+            Daerah Khusus: Jakarta Barat, Cengkareng Timur
+          </p>
+          <p className="text-lg">Jam Buka: 08:00 - 17:00</p>
           <p className="text-lg">Nomor Telepon: (123) 456-7890</p>
         </div>
-        <div className="w-full sm:w-1/2 mt-4 mr-10 sm:mt-0">
+        <div className="w-full sm:w-1/2 mt-4 sm:mt-40 mr-10 ">
           <iframe
             title="Google Map"
             width="100%"
@@ -37,7 +39,7 @@ const Lokasi = () => {
               Find Population on Map
             </a>
           </iframe>
-          <div className="mt-10 items-center justify-center flex">
+          <div className="mt-10 mb-40 items-center justify-center flex">
             <button className="learn-more" onClick={handleCariLokasiClick}>
               <span className="circle" aria-hidden="true">
                 <span className="icon arrow"></span>

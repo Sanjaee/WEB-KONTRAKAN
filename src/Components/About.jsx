@@ -6,12 +6,15 @@ function KontrakanCard() {
   return (
     <div>
       <Navigasi />
-      <div className="max-w-xl mx-auto rounded overflow-hidden shadow-lg sm:max-w-full lg:max-w-2xl mt-10">
-        <img
-          src="logo.png"
-          alt="Kontrakan Jakarta Barat"
-          className=" sm:w-1/5 lg:w-1/4 mx-auto"
-        />
+      <div className="max-w-xl mx-auto rounded overflow-hidden shadow-lg sm:max-w-full lg:max-w-2xl bg-gray-200">
+        <div className="mt-32">
+          <img
+            src="logo.png"
+            alt="Kontrakan Jakarta Barat"
+            className=" sm:w-1/5 lg:w-1/4 mx-auto mb-10"
+          />
+        </div>
+
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">
             Selamat Datang di Kontrakan Jakarta Barat yang Mengagumkan!

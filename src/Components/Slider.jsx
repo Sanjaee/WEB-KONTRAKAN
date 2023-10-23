@@ -78,6 +78,7 @@ const Slider = () => {
                   style={{
                     width: `${100 / sliderData.length}%`,
                     display: "inline-block",
+                    marginTop: "70px",
                   }}
                 >
                   <img

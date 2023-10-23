@@ -23,10 +23,13 @@ nav ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: fixed;
+  background-color: white;
+  z-index: 999;
 }
 
 nav li {
-  height: 80px;
+  height: 70px;
 }
 nav a {
   height: 100%;
@@ -51,7 +54,7 @@ nav li:first-child {
   right: 0;
   height: 100vh;
   width: 250px;
-  z-index: 999;
+  z-index: 1000;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);

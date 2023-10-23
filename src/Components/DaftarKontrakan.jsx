@@ -58,7 +58,7 @@ const DaftarKontrakan = () => {
     <section className="mx-auto max-w-7xl p-4 sm:px-2 lg:px-2 lg:py-6 min-h-[50vh]">
       <div className="flex flex-col space-y-10">
         <div>
-          <h1 className="text-xl font-extrabold sm:text-3xl">
+          <h1 className="text-xl font-extrabold sm:text-3xl ml-2 ">
             Daftar Kontrakan
           </h1>
         </div>
@@ -66,6 +66,7 @@ const DaftarKontrakan = () => {
         {/* Add a search input field */}
         <div>
           <input
+            className="input"
             type="text"
             placeholder="Search Kontrakan..."
             value={searchTerm}
