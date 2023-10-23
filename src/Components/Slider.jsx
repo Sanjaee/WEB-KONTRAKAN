@@ -1,126 +1,60 @@
-import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import React, { useState, useEffect } from "react";
+import { collection, onSnapshot } from "firebase/firestore";
 import db from "../api/firebase"; // Import your Firebase configuration
-import "../style/Slider.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const SkeletonLoader = () => (
-  <div className="skeleton-loader">
-    <div className="skeleton-image">Loading...</div>
-  </div>
-);
-
-const Slider = () => {
-  const [isLoading, setIsLoading] = useState(true);
+const SliderComponent = () => {
   const [sliderData, setSliderData] = useState([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [activeDot, setActiveDot] = useState(0);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const sliderCollection = collection(db, "slider");
-      const snapshot = await getDocs(sliderCollection);
-      const data = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setSliderData(data);
-      setIsLoading(false);
-    };
+    // Fetch data from the "slider" collection and listen for real-time updates
+    const sliderCollection = collection(db, "slider");
 
-    fetchData();
+    const unsubscribe = onSnapshot(sliderCollection, (querySnapshot) => {
+      const sliderItems = [];
+      querySnapshot.forEach((doc) => {
+        sliderItems.push({ id: doc.id, ...doc.data() });
+      });
+      setSliderData(sliderItems);
+    });
+
+    return () => {
+      // Stop listening to changes when the component is unmounted
+      unsubscribe();
+    };
   }, []);
 
-  const nextSlide = () => {
-    const nextIndex = (currentSlide + 1) % sliderData.length;
-    setCurrentSlide(nextIndex);
-    setActiveDot(nextIndex);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 5000, // Set autoplay interval to 5 seconds (5000 milliseconds)
   };
-
-  const prevSlide = () => {
-    const prevIndex =
-      (currentSlide - 1 + sliderData.length) % sliderData.length;
-    setCurrentSlide(prevIndex);
-    setActiveDot(prevIndex);
-  };
-
-  useEffect(() => {
-    let slideInterval;
-    if (!isLoading && sliderData.length > 0) {
-      slideInterval = setInterval(nextSlide, 5000);
-    }
-
-    return () => clearInterval(slideInterval);
-  }, [isLoading, sliderData, currentSlide]);
 
   return (
-    <div className="flex items-center justify-center bg-gray-400">
-      <div
-        className="mt-10 max-w-screen-lg mx-auto"
-        style={{ overflow: "hidden" }}
-      >
-        {isLoading ? (
-          <SkeletonLoader />
-        ) : (
-          <div className="relative">
-            <div
-              className="slider"
-              style={{
-                width: `${100 * sliderData.length}%`,
-                transform: `translateX(-${
-                  currentSlide * (100 / sliderData.length)
-                }%)`,
-                transition: "transform 1s",
-              }}
-            >
-              {sliderData.map((item, index) => (
-                <div
-                  key={item.id}
-                  style={{
-                    width: `${100 / sliderData.length}%`,
-                    display: "inline-block",
-                    marginTop: "70px",
-                  }}
-                >
-                  <img
-                    src={item.image}
-                    alt={`image ${index + 1}`}
-                    className="w-full h-full  rounded-md mb-10"
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 flex justify-center">
-              {sliderData.map((_, index) => (
-                <span
-                  key={index}
-                  className={`dot ${index === activeDot ? "active-dot" : ""}`}
-                  onClick={() => handleDotClick(index)}
+    <div className="bg-gray-400 py-4 ">
+      <div className="max-w-screen-lg mx-auto mt-20">
+        <div className="p-6">
+          <Slider {...settings}>
+            {sliderData.map((item) => (
+              <div key={item.id}>
+                <img
+                  src={item.image}
+                  alt="Slider"
+                  className="max-w-full h-auto rounded-lg"
                 />
-              ))}
-            </div>
-            <div className="absolute left-0 top-0 bottom-0 flex items-center pl-4">
-              <button
-                onClick={prevSlide}
-                className="text-4xl font-bold text-white hover:text-black"
-                disabled={isLoading || sliderData.length <= 1}
-              >
-                {"<"}
-              </button>
-            </div>
-            <div className="absolute right-0 top-0 bottom-0 flex items-center pr-4">
-              <button
-                onClick={nextSlide}
-                className="text-4xl font-bold text-white hover:text-black"
-                disabled={isLoading || sliderData.length <= 1}
-              >
-                {">"}
-              </button>
-            </div>
-          </div>
-        )}
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Slider;
+export default SliderComponent;

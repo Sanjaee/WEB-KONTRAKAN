@@ -76,7 +76,11 @@ const DaftarKontrakan = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 ">
           {filteredKontrakan.map((item) => (
-            <Link to="/Payment" key={item.id} className="store-card">
+            <Link
+              to={`/Payment/${item.id}`}
+              key={item.id}
+              className="store-card"
+            >
               <div className="store-card-inner">
                 <img
                   src={item.image}
