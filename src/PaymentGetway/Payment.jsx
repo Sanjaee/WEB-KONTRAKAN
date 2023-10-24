@@ -44,7 +44,7 @@ const Payment = () => {
         catatan,
       } = formData;
 
-      const message = `Type Joki: ${typeJoki}%0D%0AType Rank: ${typeRank}%0D%0AType Login: ${typeLogin}%0D%0AID AKUN: ${idAkun}%0D%0ANAMA AKUN: ${namaAkun}%0D%0ANOMOR ORDERAN: ${nomorOrderan}%0D%0AEMAIL: ${email}%0D%0ACATATAN/PERIHAL: ${catatan}`;
+      const message = `%0D%0AType Pembayaran:  ${typeRank} %0D%0ANAMA : ${namaAkun}%0D%0ANOMOR TELEPON: ${nomorOrderan}%0D%0AEMAIL: ${email}%0D%0AJUMBLAH PENGHUNI: ${typeLogin}%0D%0ACATATAN/PERIHAL: ${catatan}`;
 
       // Mengirim pesan WhatsApp
       window.open(
@@ -129,8 +129,8 @@ const Payment = () => {
           </div>
           <h1 className=" font-bold text-red-500 mt-12">
             Estimasi Proses Kita Usahakan Secepatnya Minimal 12 Jam - Maximal
-            1x24 Jam **Catatan Penting!!! : SESUDAH PESAN MOHON JANGAN MEMBAYAR
-            TERLEBIH DAHULU SEBELUM DIKONFIRMASI**{" "}
+            2x24 Jam **Catatan Penting!!! : SESUDAH PESAN MOHON JANGAN MEMBAYAR
+            TERLEBIH DAHULU SEBELUM DIKONFIRASI**{" "}
           </h1>
         </div>
         {/* card 2 */}
