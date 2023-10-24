@@ -33,6 +33,9 @@ const DetailKontrakan = () => {
     };
 
     fetchData();
+
+    // Scroll to the top when the component is mounted
+    window.scrollTo(0, 0);
   }, [id]);
 
   const formatCurrency = (price) => {
@@ -93,6 +96,7 @@ const DetailKontrakan = () => {
                 <FontAwesomeIcon icon={faMapMarker} />{" "}
                 <p className="text-lg text-gray-800 ">{kontrakan.lokasi}</p>
               </div>
+              <p className="text-lg text-gray-800 ">{kontrakan.benefit}</p>
             </div>
           </div>
         ) : (

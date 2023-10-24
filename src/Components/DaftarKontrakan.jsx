@@ -74,7 +74,7 @@ const DaftarKontrakan = () => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-1">
-          {filteredKontrakan.map((item, index) => (
+          {filteredKontrakan.map((item) => (
             <Link
               to={`/Payment/${item.id}`}
               key={item.id}

@@ -79,20 +79,58 @@ const Payment = () => {
             <Link to="/">&larr; Kembali</Link>
           </div>
           <div className=" justify-center items-center grid">
-            <img src="/logo.png" alt="" className=" w-28 rounded-xl" />
-            <h1 className=" text-center mt-3 font-bold">JOKI MLBB</h1>
+            <img src="/logo.png" alt="" className=" w-24 rounded-xl ml-6" />
+            <h1 className=" text-center mt-7 font-bold">westjakartarentals</h1>
             <div className=" bg-WarnaAteng w-28 h-1 rounded-xl"></div>
           </div>
-          <h1 className=" mt-5 font-bold text-lg">Cara Order:</h1>
+          <h1 className=" mt-5 font-bold text-lg">Benefit:</h1>
           <div className=" ml-5 mt-4">
-            <li>Lengkapi Data Joki Dengan Teliti!</li>
-            <li>Pilih Jenis Joki Rank</li>
-            <li>Masukkan nomor WhatsApp</li>
+            <ul>
+              <li>
+                <strong>Kasur Tidur:</strong> Setiap kamar dilengkapi dengan
+                kasur tidur yang nyaman untuk para penyewa.
+              </li>
+              <li>
+                <strong>Kamar Mandi Pribadi:</strong> Setiap kamar dilengkapi
+                dengan kamar mandi pribadi yang mencakup shower, wastafel, dan
+                toilet, sehingga penyewa memiliki privasi dalam penggunaan
+                fasilitas ini.
+              </li>
+              <li>
+                <strong>AC (Air Conditioner):</strong> Setiap kamar dilengkapi
+                dengan AC untuk memberikan kenyamanan selama cuaca panas.
+              </li>
+
+              <li>
+                <strong>Lokasi Strategis:</strong> Kos-kosan terletak di lokasi
+                yang strategis, dekat dengan transportasi umum, pusat
+                perbelanjaan, dan fasilitas penting lainnya.
+              </li>
+              <li>
+                <strong>Keamanan:</strong> Mungkin ada sistem keamanan, seperti
+                kunci elektronik atau kamera pengawas, untuk memastikan keamanan
+                penyewa.
+              </li>
+
+              <li>
+                <strong>Ketersediaan Tempat Parkir:</strong> Jika mungkin,
+                tersedianya tempat parkir untuk penyewa yang memiliki kendaraan
+                pribadi.
+              </li>
+              <li>
+                <strong>Listrik dan Air Bersih:</strong> Fasilitas listrik dan
+                air bersih yang andal untuk kenyamanan sehari-hari penyewa.
+              </li>
+              <li>
+                <strong>Layanan Kebersihan:</strong> Penyediaan layanan
+                kebersihan yang berkala untuk menjaga kebersihan ruangan.
+              </li>
+            </ul>
           </div>
           <h1 className=" font-bold text-red-500 mt-12">
-            Estimasi Proses Jasa Joki Kita Usahakan Secepatnya Minimal 12 Jam -
-            Maximal 2x24 Jam **Catatan Penting!!! : Sebelum Order Mohon Tonton
-            Vidio Cara Pemesanan Di Halaman{" "}
+            Estimasi Proses Kita Usahakan Secepatnya Minimal 12 Jam - Maximal
+            1x24 Jam **Catatan Penting!!! : SESUDAH PESAN MOHON JANGAN MEMBAYAR
+            TERLEBIH DAHULU SEBELUM DIKONFIRMASI**{" "}
           </h1>
         </div>
         {/* card 2 */}
@@ -100,78 +138,40 @@ const Payment = () => {
           <h1 className="text-2xl font-bold mb-4">Payment Information</h1>
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium">Type Joki</label>
-              <select
-                className="w-full px-4 py-2 border rounded-md"
-                name="typeJoki"
-                onChange={handleChange}
-                value={formData.typeJoki}
-              >
-                <option value="Joki Gendong">Joki Gendong</option>
-                <option value="Joki Akun">Joki Akun</option>
-                <option value="Joki Clasik">Joki Clasik</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium">Type Rank</label>
+              <label className="block text-sm font-medium">
+                Type Pembayaran
+              </label>
               <select
                 className="w-full px-4 py-2 border rounded-md"
                 name="typeRank"
                 onChange={handleChange}
                 value={formData.typeRank}
               >
-                <option value="Warior - Elit (SEIKLASNYA)">
-                  Warior - Elit (SEIKLASNYA)
-                </option>
-
-                <option value="Elit - Master (SEIKLASNYA)">
-                  Elit - Master (SEIKLASNYA)
-                </option>
-                <option value="Master - GrandMaster (SEIKLASNYA)">
-                  Master - GrandMaster (SEIKLASNYA)
-                </option>
-                <option value="GrandMaster - Epic (Rp.50.000)">
-                  GrandMaster - Epic (Rp.50.000)
-                </option>
-                <option value="Epic - Legend (Rp.80.000)">
-                  Epic - Legend (Rp.80.000)
-                </option>
-                <option value="Legend - Mythic (Rp.100.000)">
-                  Legend - Mythic (Rp.100.000)
-                </option>
-                <option value="Mythic - Honor (Rp.150.000)">
-                  Mythic - Honor (Rp.150.000)
-                </option>
+                <option value="Cash">Cash</option>
+                <option value="DANA">DANA</option>
+                <option value="OVO">OVO</option>
+                <option value="SHOPEE PAY">SHOPEE PAY</option>
+                <option value="BANK BCA">BANK BCA</option>
+                <option value="BANK BRI">BANK BRI</option>
+                <option value="BANK MANDIRI">BANK MANDIRI</option>
 
                 {/* ... tambahkan opsi lainnya sesuai kebutuhan ... */}
               </select>
             </div>
+
             <div>
-              <label className="block text-sm font-medium">ID AKUN</label>
-              <input
-                type="number"
-                className="w-full px-4 py-2 border rounded-md"
-                name="idAkun"
-                onChange={handleChange}
-                value={formData.idAkun}
-                placeholder="74375432 (4334)"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium">NAMA AKUN</label>
+              <label className="block text-sm font-medium">NAMA </label>
               <input
                 type="text"
                 className="w-full px-4 py-2 border rounded-md"
                 name="namaAkun"
                 onChange={handleChange}
                 value={formData.namaAkun}
-                placeholder="EVOS_GALANG"
+                placeholder="NAMA"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium">
-                NOMOR TELEPON ORDERAN
-              </label>
+              <label className="block text-sm font-medium">NOMOR TELEPON</label>
               <input
                 type="number"
                 className="w-full px-4 py-2 border rounded-md"
@@ -193,17 +193,21 @@ const Payment = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium">Type Login</label>
+              <label className="block text-sm font-medium">
+                JUMBLAH PENGHUNI
+              </label>
               <select
                 className="w-full px-4 py-2 border rounded-md"
                 name="typeLogin"
                 onChange={handleChange}
                 value={formData.typeLogin}
               >
-                <option value="GENDONG(Gendong Akun)">
-                  GENDONG(Mainkan Sendiri)
-                </option>
-                <option value="Monton(Joki Akun)">Monton(Joki Akun)</option>
+                <option value="1 ORANG">1 ORANG</option>
+                <option value="2 ORANG">2 ORANG</option>
+                <option value="3 ORANG">3 ORANG</option>
+                <option value="4 ORANG">4 ORANG</option>
+                <option value="5 ORANG">5 ORANG</option>
+                <option value="6 ORANG">6 ORANG</option>
               </select>
             </div>
 

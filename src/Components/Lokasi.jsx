@@ -17,10 +17,8 @@ const Lokasi = () => {
       <Navigasi />
       <div className=" flex flex-col sm:flex-row ">
         <div className="w-full sm:w-1/2 p-4 sm:p-10 mt-36 sm:mt-60 ">
-          <h1 className="text-2xl font-bold">Lokasi</h1>
-          <p className="text-lg">
-            Daerah Khusus: Jakarta Barat, Cengkareng Timur
-          </p>
+          <h1 className="text-2xl font-bold mb-5">Lokasi</h1>
+          <p className="text-lg">Daerah: Jakarta Barat, Cengkareng Timur</p>
           <p className="text-lg">Jam Buka: 08:00 - 17:00</p>
           <p className="text-lg">Nomor Telepon: (123) 456-7890</p>
         </div>

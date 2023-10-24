@@ -11,7 +11,7 @@ function KontrakanCard() {
           <img
             src="logo.png"
             alt="Kontrakan Jakarta Barat"
-            className=" sm:w-1/5 lg:w-1/4 mx-auto mb-10"
+            className=" sm:w-1/5 lg:w-1/4 mx-auto mb-10 rounded-lg"
           />
         </div>
 
@@ -65,7 +65,7 @@ function KontrakanCard() {
         </div>
         <div className="px-6 py-4">
           <Link
-            to="/Payment"
+            to="/"
             className="block w-full text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
           >
             Hubungi Kami Sekarang!
