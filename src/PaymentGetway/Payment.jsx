@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navigasi from "../Components/Navigasi";
+
 import PopUp from "../Components/Popup";
 import "../style/ButtonPayment.css";
 import { Link } from "react-router-dom";
@@ -67,9 +67,7 @@ const Payment = () => {
 
   return (
     <div>
-      <div>
-        <Navigasi />
-      </div>
+      <div></div>
       <div className=" justify-end items-end flex mt-3 mr-2 ">
         {isPopupVisible && <PopUp />}
       </div>
@@ -81,7 +79,7 @@ const Payment = () => {
             <Link to="/">&larr; Kembali</Link>
           </div>
           <div className=" justify-center items-center grid">
-            <img src="logo.png" alt="" className=" w-28 rounded-xl" />
+            <img src="/logo.png" alt="" className=" w-28 rounded-xl" />
             <h1 className=" text-center mt-3 font-bold">JOKI MLBB</h1>
             <div className=" bg-WarnaAteng w-28 h-1 rounded-xl"></div>
           </div>

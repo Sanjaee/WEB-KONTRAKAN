@@ -6,10 +6,11 @@ import {
   RouterProvider,
 } from "react-router-dom/dist/index.js";
 import Home from "./App";
-import Payment from "./PaymentGetway/Payment";
+
 import GoogleMap from "./Components/Lokasi";
 
 import KontrakanCard from "./Components/About";
+import DetailKontrakan from "./Components/DetailKontrakan";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/Payment/:id",
-    element: <Payment />,
+    element: <DetailKontrakan />,
   },
   {
     path: "/Lokasi",

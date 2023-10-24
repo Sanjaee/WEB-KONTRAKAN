@@ -57,13 +57,9 @@ const DaftarKontrakan = () => {
   return (
     <section className="mx-auto max-w-7xl p-4 sm:px-2 lg:px-2 lg:py-6 min-h-[50vh]">
       <div className="flex flex-col space-y-10">
-        <div>
-          <h1 className="text-xl font-extrabold sm:text-3xl ml-2 ">
-            Daftar Kontrakan
-          </h1>
-        </div>
-
-        {/* Add a search input field */}
+        <h1 className="text-xl font-extrabold sm:text-3xl ml-2 ">
+          Daftar Kontrakan
+        </h1>
         <div>
           <input
             className="input"
@@ -72,10 +68,13 @@ const DaftarKontrakan = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          <div className=" text-sm font-bold  ml-2 mt-4">
+            Tersedia: {filteredKontrakan.length} Kontrakan
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 ">
-          {filteredKontrakan.map((item) => (
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1">
+          {filteredKontrakan.map((item, index) => (
             <Link
               to={`/Payment/${item.id}`}
               key={item.id}
@@ -117,6 +116,8 @@ const DaftarKontrakan = () => {
               </div>
             </Link>
           ))}
+
+          {/* Tampilkan jumlah card di samping kanan */}
         </div>
       </div>
     </section>

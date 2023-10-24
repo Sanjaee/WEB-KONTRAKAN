@@ -29,11 +29,11 @@ const SliderComponent = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 2000,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true, // Enable autoplay
-    autoplaySpeed: 5000, // Set autoplay interval to 5 seconds (5000 milliseconds)
+    autoplaySpeed: 4000, // Set autoplay interval to 5 seconds (5000 milliseconds)
   };
 
   return (

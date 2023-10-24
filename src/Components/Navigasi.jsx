@@ -47,7 +47,7 @@ export default function Navigasi() {
         <ul>
           <li>
             <Link to="/" className=" font-bold text-xl">
-              <img src="logo.png" className=" w-12" alt="" />
+              <img src="/logo.png" className=" w-12" alt="" />
             </Link>
           </li>
           <li className="hideOnMobile">
