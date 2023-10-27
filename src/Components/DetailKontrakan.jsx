@@ -10,7 +10,7 @@ import Slider from "react-slick";
 
 const DetailKontrakan = () => {
   const { id } = useParams();
-  const [kontrakan, setKontrakan] = useState(null);
+  const [kontrakan, setKontrakan] = useState({ imageList: [] }); // Initialize kontrakan with an empty array for image
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,24 +58,26 @@ const DetailKontrakan = () => {
   return (
     <div className="bg-gray-200">
       <Navigasi />
-      <div className="container mx-auto p-4 ">
+      <div className="container mx-auto p-4">
         {kontrakan ? (
           <div className="md:flex md:mt-24 mt-20">
             {/* Kolom 1 (Gambar) */}
             <div className="md:w-1/2">
               <Slider {...settings}>
-                <div>
-                  <img
-                    src={kontrakan.image}
-                    alt={kontrakan.name}
-                    className="w-full h-auto rounded"
-                  />
-                </div>
+                {kontrakan.imageList.map((imageList, index) => (
+                  <div key={index}>
+                    <img
+                      src={imageList}
+                      alt={kontrakan.name}
+                      className="w-full h-auto rounded"
+                    />
+                  </div>
+                ))}
               </Slider>
             </div>
             {/* Kolom 2 (Detail) */}
             <div className="md:w-1/2 md:pl-4">
-              <p className="text-3xl text-gray-800 mb-2 font-bold mt-4">
+              <p className="text-3xl text-gray-800 mb-2 font-bold mt-7">
                 {formatCurrency(kontrakan.harga)}
               </p>
               <h2 className="text-2xl font-semibold ">{kontrakan.name}</h2>
